@@ -10,8 +10,28 @@
         android:layout_weight="1"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:background="#E1E89D"/>
+        android:background="#E1E89D"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#E6958F"/>
 
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#B5DD87"/>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#F4EB95"/>
+
+    </LinearLayout>
     <LinearLayout
         android:layout_weight="1"
         android:layout_width="0dp"
