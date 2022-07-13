@@ -1,0 +1,37 @@
+public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "YSH";
+    int i = 1;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main); // <= (※※ 디자인 <-> 자바 연결 ※※)
+
+        //모든 위젯은 View클래스를 상속받음 ( View의 자식 클래스 )
+        //모든 위젯은 onClickListner라는 (눌렀을때) 이벤트를 가지고있다↑
+        //Button button = new Button; <= 새로운 버튼을 메모리에 올림(x)
+        Button button = findViewById(R.id.button2); //디자인에서 만들어놓은 버튼을 java 버튼 객체에 넣음(초기화)
+        TextView textView = findViewById(R.id.textView2);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //버튼이 눌러졌을때의 처리( logd <- 로그 찍기 단축키)
+                //버튼을 클릭할때마다 버튼이 눌러졌습니다 누른횟수만큼 계속 증가.
+                //Log.d(TAG,"버튼이 눌러졌습니다");
+
+                Log.d(TAG,"버튼이 눌러졌습니다" + i);
+                button.setText("버튼 눌린 횟수 : " + i);  //setText( 여기에 들어있는 글자로 Text를 세팅함
+                //textView.setText("Y S H " + i);
+                textView.setText(textView.getText()+"" + i);
+
+                i++;
+
+            }
+        });
+
+
+    }
+
+
+
+}
