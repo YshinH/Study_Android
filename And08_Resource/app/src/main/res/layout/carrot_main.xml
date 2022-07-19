@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_weight="4"
+            style="@style/carrot_style"
+            android:text="나의 당근"
+            android:layout_marginLeft="30dp"
+            android:gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/ic_settings_24"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#F7CCD3DA"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_weight="1"
+            android:src="@drawable/ic_launcher_foreground"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+        <LinearLayout
+            android:layout_weight="7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:text="닉네임"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"/>
+            <TextView
+
+                android:text="농성동 #3526967"
+                android:textColor="#899EB3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+        <ImageButton
+            android:src="@drawable/ic_right_24"
+            android:background="@color/white"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+<LinearLayout
+    android:layout_margin="30dp"
+    android:layout_width="wrap_content"
+    android:layout_height="50dp"
+    android:layout_gravity="center"
+    android:background="@drawable/dashgap_shape"
+    android:orientation="horizontal"
+    >
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:src="@mipmap/ic_ysh_round"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="중고거래는 이제 당근페이로 해보세요!"
+        android:textColor="@color/black" />
+
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#F7CCD3DA"/>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_weight="1"
+            style="@style/carrot_style"
+            android:gravity="center_vertical"
+            android:text="사장님 메뉴"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:src="@drawable/ic_baseline_storefront_24"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                />
+
+            <TextView
+                android:layout_weight="9"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:textSize="20dp"
+                android:text="비즈프로필관리"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:src="@drawable/ic_videocam_24"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                />
+
+            <TextView
+                android:layout_marginBottom="30dp"
+                android:layout_weight="9"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:textSize="20dp"
+                android:text="광고"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#F7CCD3DA"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+
+            android:layout_weight="1"
+            style="@style/carrot_style"
+            android:gravity="center_vertical"
+            android:text="나의 활동"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:src="@drawable/ic_videocam_24"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            />
+
+        <TextView
+            android:layout_marginBottom="20dp"
+            android:layout_weight="9"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textSize="20dp"
+            android:text=" 내 동네 설정"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:src="@drawable/ic_videocam_24"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            />
+
+        <TextView
+            android:layout_marginBottom="20dp"
+            android:layout_weight="9"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textSize="20dp"
+            android:text="동네 인증하기"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:src="@drawable/ic_videocam_24"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            />
+
+        <TextView
+            android:layout_marginBottom="20dp"
+            android:layout_weight="9"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textSize="20dp"
+            android:text="키워드 알림"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:src="@drawable/ic_videocam_24"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            />
+
+        <TextView
+            android:layout_marginBottom="20dp"
+            android:layout_weight="9"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textSize="20dp"
+            android:text="모아보기"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:src="@drawable/ic_videocam_24"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            />
+
+        <TextView
+            android:layout_marginBottom="20dp"
+            android:layout_weight="9"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textSize="20dp"
+            android:text="당근가계부"/>
+    </LinearLayout>
+
+
+</LinearLayout>

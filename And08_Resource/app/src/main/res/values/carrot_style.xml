@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="carrot_width">100dp</dimen>
+    <dimen name="carrot_height">100dp</dimen>
+
+    <style name="carrot_style">
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="carrot_style2" parent="carrot_style">
+        <item name="android:textSize">15dp</item>
+        <item name="android:height">50dp</item>
+
+    </style>
+
+</resources>
