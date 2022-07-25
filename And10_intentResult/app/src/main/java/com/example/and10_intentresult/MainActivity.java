@@ -1,21 +1,25 @@
 package com.example.and10_intentresult;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    Button btn1, btn_login, btn_reset;
+    Button btn1, btn_login, btn_reset, btn2, btn_call, btn_internet, btn_gps;
 
     //안드로이드의 4대 컴포넌트 : (현) 액티비티
     // 4가지의 컴포넌트들간의 통신을 담당 : Intent(전달)
@@ -24,15 +28,48 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        btn_call = findViewById(R.id.btn_call);
+        btn_internet = findViewById(R.id.btn_internet);
+        btn_gps = findViewById(R.id.btn_gps);
+
+        btn_call.setOnClickListener(this);
+        btn_gps.setOnClickListener(this);
+        btn_internet.setOnClickListener(this);
+
 //        findViewById(R.id.btn1).setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
 //                
 //            }
 //        }); 이렇게도 사용가능하나 가독성이 떨어짐
-        
+
         btn1 = findViewById(R.id.btn1);
         LayoutInflater inflater = getLayoutInflater();
+
+        btn2 = findViewById(R.id.btn2);
+
+        String ysh = "윤신향";
+        int num = 123;
+
+
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TestActivity.class);
+                intent.putExtra("dto", new LoginDTO(1, "dtoPw"));
+                intent.putExtra("ysh", ysh);
+                intent.putExtra("num", num);
+                //startActivity(intent); //실제 액티비티를 띄움
+                //startActivity라는 메소드는 새창을 띄우는 용도로만 사용을 함.
+                //다음 액티비티의 작업이나 결과를 받아오기위해서는 다른 메소드를 사용.
+                //intent (명시적, 암시적)
+                //명시적 : <- 내가 만든 클래스(바운더리)에서 작업이 되었을때를 의미함.
+                //암시적 : <- 내가 만들지 않은 어떠한 곳에서작업이 되었을때(카메라, 갤러리, 인터넷 등
+                startActivityForResult(intent, 1001);
+
+            }
+        });
 
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -45,9 +82,10 @@ public class MainActivity extends AppCompatActivity {
                 //Intent intent = new Intent(MainActivity.this, SubActivity.class);
                 //startActivity(intent);
 
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                //Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                Intent intent = new Intent(MainActivity.this,LoginActivity.class);
                 intent.putExtra("test","넘길값");
-                intent.putExtra("num",100);
+                intent.putExtra("num",1001);
                 //id : 11, pw : admin
 
                 LoginDTO dto = new LoginDTO(11, "admin");
@@ -68,8 +106,50 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+/*        Intent intent = new Intent(MainActivity.this, SubActivity.class);
+        startActivityForResult(intent, 1002);*/
+
+    }
+    //상수 <-
+    final  int REQ_TESTCODE = 1001;
+    final  int REQ_SUB_CODE = 1002;
+
+
+    //어떤 액티비티가 종료되었는지를 어떻게 구별할까?
+
+    // 1001번 왜썼을까????, kakao에서는 왜 콜백을 만들었을까?
+    @Override // <- startActivityForResult로 Intent(Activity)를 실행하면 항상 콜백부분.(메소드)
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == REQ_TESTCODE){
+            Log.d("TAG", " : 테스트 액티비티가 실행되고 결과를 표시할꺼임.");
+            Log.d("TAG", "결과코드" + resultCode );
+            //intent를 받아왔음 안에 들어있는 스트링값을 출력하기
+
+        getIntent().getStringExtra("data");
+        }else if(resultCode == 1002){
+            Log.d("TAG", " : 서브 액티비티가 실행되고 결과를 표시할꺼임.");
+            
+        }
+
 
     }
 
+    @Override
+    public void onClick(View v) {
+        if(v.getId() == R.id.btn_call){
+            //안드로이드에서 기본적으로 제공하고 우리가 만들지않은 작업을 하게되면 암시적 인덴트 라고 한다.
+            //전화걸기 (권한 매우 낮음 -> 매니페스트 파일에 명시만 해놓으면 바로 사용가능한 부분) permission
+            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:/119"));
+            startActivity(intent);
 
+        }else if(v.getId() == R.id.btn_gps){
+
+        }else if(v.getId() == R.id.btn_internet){
+
+        }
+
+
+
+    }
 }

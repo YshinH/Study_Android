@@ -15,4 +15,32 @@
         android:text="새화면 띄우기"
        android:layout_gravity="center"/>
 
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="새화면 띄우기2"
+        android:layout_gravity="center"/>
+
+
+    <Button
+        android:id="@+id/btn_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="암시적 인텐트 전화가능"
+        android:layout_gravity="center"/>
+    <Button
+        android:id="@+id/btn_internet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="암시적 인텐트 인터넷 가능"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/btn_gps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="암시적 인덴트 지도 가능"
+        android:layout_gravity="center"/>
+
 </LinearLayout>

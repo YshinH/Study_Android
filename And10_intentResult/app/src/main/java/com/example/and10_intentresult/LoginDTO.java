@@ -4,13 +4,13 @@ import java.io.Serializable;
 
 public class LoginDTO implements Serializable {
 
+    private int id;
+    private String pw;
+
     public LoginDTO(int id, String pw) {
         this.id = id;
         this.pw = pw;
     }
-
-    private int id;
-    private String pw;
 
     public int getId() {
         return id;

@@ -10,20 +10,20 @@
     >
 
 
-    <TextView
+    <EditText
         android:id="@+id/id"
         android:layout_margin="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="아이디를 입력하세요"
+        android:hint="아이디를 입력하세요"
         android:textSize="30dp"/>
 
-    <TextView
+    <EditText
         android:id="@+id/pw"
         android:layout_margin="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="비밀번호를 입력하세요"
+        android:hint="비밀번호를 입력하세요"
         android:textSize="30dp"/>
 
     <LinearLayout
@@ -32,6 +32,7 @@
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_gravity="top">
+
         <Button
             android:id="@+id/btn_login"
             android:layout_width="wrap_content"
