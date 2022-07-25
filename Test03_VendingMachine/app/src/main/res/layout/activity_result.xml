@@ -40,7 +40,7 @@
             android:id="@+id/balance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="잔액"
+            android:text="0"
             android:textSize="20dp"
             />
 
@@ -73,56 +73,14 @@
             android:orientation="horizontal"
             android:layout_gravity="center">
 
-            <TextView
-                android:id="@+id/drink_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="음료"
-                android:textSize="20dp"
-                />
 
             <TextView
-                android:id="@+id/num_1"
+                android:id="@+id/order"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint=" 0 "
+                android:text="0"
                 android:textSize="20dp"
                 />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="개, "
-                android:textSize="20dp"
-
-                />
-
-            <TextView
-                android:id="@+id/drink_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="음료"
-                android:textSize="20dp"
-                />
-
-            <TextView
-                android:id="@+id/num_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint=" 0 "
-                android:textSize="20dp"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="개 "
-                android:textSize="20dp"
-
-                />
-
-
-
 
 
 

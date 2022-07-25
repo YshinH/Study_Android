@@ -23,7 +23,9 @@ public class MainActivity extends AppCompatActivity {
     EditText edt_money;
     TextView number_1, number_2, number_3,number_4, number_5, number_6, balance;
 
-    int n1=0, n2=0, n3=0, n4=0, n5=0, n6=0, balance_int=0;
+    int n1=1, n2=1, n3=1, n4=1, n5=1, n6=1, balance_int=0;
+
+    ArrayList<VendingListDTO> list = new ArrayList<VendingListDTO>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,12 +64,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (rtnInt(edt_money.getText().toString())){
-                    Log.d("아무값" , "OK: ");
+                    Log.d("값" , "OK: ");
 
                     balance.setText(edt_money.getText());
                     balance_int = Integer.parseInt(String.valueOf(balance.getText()));
                 }else{
-                    Log.d("아무값" , "NG: ");
+                    Log.d("값" , "NG: ");
                     Toast.makeText(getApplicationContext(), "정수만 입력해주세요", Toast.LENGTH_SHORT).show();
                     edt_money.setText("");
                     edt_money.setHint("잘못입력하셨습니다!");
@@ -75,30 +77,30 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        n1 = Integer.parseInt(String.valueOf(number_1.getText()));
-        n2 = Integer.parseInt(String.valueOf(number_2.getText()));
-        n3 = Integer.parseInt(String.valueOf(number_3.getText()));
-        n4 = Integer.parseInt(String.valueOf(number_4.getText()));
-        n5 = Integer.parseInt(String.valueOf(number_5.getText()));
-        n6 = Integer.parseInt(String.valueOf(number_6.getText()));
+        n1 = Integer.parseInt(number_1.getText().toString());
+        n2 = Integer.parseInt(number_2.getText().toString());
+        n3 = Integer.parseInt(number_3.getText().toString());
+        n4 = Integer.parseInt(number_4.getText().toString());
+        n5 = Integer.parseInt(number_5.getText().toString());
+        n6 = Integer.parseInt(number_6.getText().toString());
 
         btn_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { /* try catch 나중에 */
-                 if(n1 > 0 && balance_int >= 800) {
-                    n1--;
+                 if(n1 > 0 && balance_int > 800) {
+                    --n1;
                     number_1.setText(n1 + "");
                     balance_int -= 800;
                     balance.setText(balance_int+"");
-                }
+                 }
             }
         });
 
         btn_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(n2 > 0 && balance_int >= 800){
-                    n2--;
+                if(n2 > 0 && balance_int > 800){
+                    --n2;
                     balance_int -= 800;
                     number_2.setText(n2 + "");
                     balance.setText(balance_int+"");
@@ -109,8 +111,8 @@ public class MainActivity extends AppCompatActivity {
         btn_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(n3 > 0 && balance_int >= 1000){
-                    n3--;
+                if(n3 > 0 && balance_int > 1000){
+                    --n3;
                     balance_int -= 1000;
                     number_3.setText(n3 + "");
                     balance.setText(balance_int+"");
@@ -121,8 +123,8 @@ public class MainActivity extends AppCompatActivity {
         btn_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(n4 > 0 && balance_int >= 1000){
-                    n4--;
+                if(n4 > 0 && balance_int > 1000){
+                    --n4;
                     balance_int -= 1000;
                     number_4.setText(n4 + "");
                     balance.setText(balance_int+"");
@@ -133,8 +135,8 @@ public class MainActivity extends AppCompatActivity {
         btn_5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(n5 > 0 && balance_int >= 1100){
-                    n5--;
+                if(n5 > 0 && balance_int > 1100){
+                    --n5;
                     balance_int -= 1100;
                     number_5.setText(n5 + "");
                     balance.setText(balance_int+"");
@@ -145,8 +147,8 @@ public class MainActivity extends AppCompatActivity {
         btn_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(n6 > 0 && balance_int >= 1100){
-                    n6--;
+                if(n6 > 0 && balance_int > 1100){
+                    --n6;
                     balance_int -= 1100;
                     number_6.setText(n6 + "");
                     balance.setText(balance_int+"");
@@ -154,35 +156,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        VendingListDTO dto1 = new VendingListDTO("콜라", 800, 10-n1 );
-        VendingListDTO dto2 = new VendingListDTO("사이다", 800, 10-n2 );
-        VendingListDTO dto3 = new VendingListDTO("환타오렌지", 1000,  5-n3 );
-        VendingListDTO dto4 = new VendingListDTO("환타포도", 1000, 8-n4 );
-        VendingListDTO dto5 = new VendingListDTO("펩시", 1100, 12-n5 );
-        VendingListDTO dto6 = new VendingListDTO("제로콜라", 1100, 15-n6 );
-
-        ArrayList<VendingListDTO> list = new ArrayList<>();
-        list.add(0, dto1);
-        list.add(1, dto2);
-        list.add(2, dto3);
-        list.add(3, dto4);
-        list.add(4, dto5);
-        list.add(5, dto6);
-
         btn_result.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                Log.d("잔액", String.valueOf(balance.getText()));
+
+                list.add(new VendingListDTO("콜라", 800,10-Integer.parseInt(String.valueOf(n1))));
+                list.add(new VendingListDTO("사이다", 800, 10-Integer.parseInt(String.valueOf(n2))));
+                list.add(new VendingListDTO("환타오렌지", 1000,  5-Integer.parseInt(String.valueOf(n3))));
+                list.add(new VendingListDTO("환타포도", 1000, 8-Integer.parseInt(String.valueOf(n4))));
+                list.add(new VendingListDTO("펩시", 1100, 12-Integer.parseInt(String.valueOf(n5))));
+                list.add(new VendingListDTO("제로콜라", 1100, 15-Integer.parseInt(String.valueOf(n6))));
+
                 Intent intent = new Intent(MainActivity.this, ResultActivity.class);
-                intent.putExtra("bal", balance.getText());
-                intent.putExtra("dto", dto1);
                 intent.putExtra("list", list);
 
-                startActivity(intent);
+                intent.putExtra("balance", String.valueOf(balance.getText()));
 
+                startActivity(intent);
             }
         });
-
     }
 
     public boolean rtnInt(String inputData){ // => int형태로 바뀌고 그리고나서 0이상이면 OK를 리턴하는 메소드
