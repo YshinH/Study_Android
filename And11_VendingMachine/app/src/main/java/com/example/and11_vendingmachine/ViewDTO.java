@@ -4,11 +4,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class ViewDTO {
-    //위젯 중에 텍스트뷰2개와 버튼하나는 세트로 같이 추가되거나 같이 동작을 해야한다.
-    // 이러한 위젯들을 하나로 묵어서 사용하면 훨씬 편리함. <= ViewHolder(추후 사용)
-
-    private TextView tv_name, tv_cnt;
-    private Button btn_order;
+    // 위젯 중에 텍스트뷰2개와 버튼하나는 세트로 같이 추가되거나 같이 동작을해야한다.
+    // 이러한 위젯들을 하나로 묶어서 사용하면 훨씬 편리함. <= ViewHolder(추후 사용)
+    TextView tv_name , tv_cnt ;
+    Button btn_order ;
 
     public ViewDTO(TextView tv_name, TextView tv_cnt, Button btn_order) {
         this.tv_name = tv_name;

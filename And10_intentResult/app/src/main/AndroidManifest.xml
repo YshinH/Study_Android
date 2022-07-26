@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.and10_intentresult">
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
-    <uses-permission android:name="android.permission.CALL_PHONE"  />
 
     <application
         android:allowBackup="true"
@@ -10,24 +12,19 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.And10_intentResult">
+        android:theme="@style/Theme.And10_IntentResult">
         <activity
             android:name=".TestActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity2"
-            android:exported="true" />
-        <activity
             android:name=".LoginActivity"
             android:exported="true" />
-        <!--
         <activity
             android:name=".SubActivity"
             android:exported="true" />
-        -->
         <!--
-   안드로이드의 4가지 컴포턴트들은 반드시 AndroidManifest환경설정에 있어야만 합니다.
-            <activity
+ 안드로이드의 4가지 컴포넌트들은 반드시 AndroidManifest환경설정에 있어야만 합니다.
+        <activity
             android:name=".SubActivity"
             android:exported="true" />
         -->

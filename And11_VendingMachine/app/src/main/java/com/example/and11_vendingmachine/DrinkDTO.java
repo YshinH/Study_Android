@@ -3,21 +3,19 @@ package com.example.and11_vendingmachine;
 import android.widget.TextView;
 
 public class DrinkDTO {
+   private String name ;
+   private int price , cnt ;
 
-    private String name;
-    private int price, cnt;
-
-    //private TextView tv_name, tv_price;
+  // private TextView tv_name , tv_price , tv_cnt;
 
     public DrinkDTO(String name, int price, int cnt) {
         this.name = name;
         this.price = price;
         this.cnt = cnt;
     }
-
+    
     public String getNameCnt(){
-
-        return name + " " + cnt;
+        return name + " " + price + "원";
     }
 
 

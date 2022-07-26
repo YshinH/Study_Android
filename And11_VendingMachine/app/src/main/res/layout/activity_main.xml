@@ -12,30 +12,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20dp"
-        android:text="자판기 프로그램"
         android:layout_margin="10dp"
         android:gravity="center"
         android:textColor="#000"
         android:textStyle="bold"
-        />
+        android:text="자판기 프로그램"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="200dp"
             android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="center">
-
+            android:gravity="center"
+            >
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_launcher_background"/>
-
             <TextView
                 android:id="@+id/tv_name1"
                 android:layout_width="wrap_content"
@@ -46,49 +43,39 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10개 남음"/>
-
             <Button
                 android:id="@+id/btn_order1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="주분하기"/>
-
-
+                android:text="주문 하기"/>
         </LinearLayout>
-
-
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="200dp"
             android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="center">
-
+            android:gravity="center"
+            >
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_launcher_background"/>
-
             <TextView
                 android:id="@+id/tv_name2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="콜라 1000원"/>
+                android:text="사이다 1000원"/>
             <TextView
                 android:id="@+id/tv_cnt2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10개 남음"/>
-
             <Button
                 android:id="@+id/btn_order2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="주문하기"/>
-
-
+                android:text="주문 하기"/>
         </LinearLayout>
-
     </LinearLayout>
 
     <LinearLayout
@@ -98,16 +85,16 @@
 
         <EditText
             android:id="@+id/edt_money"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
 
         <Button
             android:id="@+id/btn_inputmoney"
-            android:text="금액입력"
+            android:text="금액 입력"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
+            android:layout_height="wrap_content"/>
+
 
 
     </LinearLayout>
@@ -119,11 +106,8 @@
         android:text="잔액 나오는 부분"/>
 
     <Button
+        android:text="주문 하기"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="주문하기"
         android:id="@+id/btn_ok"/>
-
-
-
 </LinearLayout>
