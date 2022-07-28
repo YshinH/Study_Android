@@ -1,4 +1,4 @@
-package com.example.and14_allview.listview;
+package com.example.and14_allview.gridview;
 
 import android.os.Bundle;
 
@@ -7,22 +7,26 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.ListView;
 
 import com.example.and14_allview.R;
+import com.example.and14_allview.listview.List_Adapter;
+import com.example.and14_allview.listview.YshDTO;
 
 import java.util.ArrayList;
 
+public class GridFragment extends Fragment {
 
-public class ListFragment extends Fragment {
-    ListView listview;
+    GridView gridView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.fragment_list, container, false);
-        listview = v.findViewById(R.id.listview);
+        View v = inflater.inflate(R.layout.fragment_grid, container, false);
+
+        gridView = v.findViewById(R.id.gridview);
 
         ArrayList<YshDTO> list = new ArrayList<>();
         //5건 추가하기.
@@ -31,24 +35,18 @@ public class ListFragment extends Fragment {
         list.add(2, new YshDTO(3, R.drawable.img3, "새", "짹짹이"));
         list.add(3, new YshDTO(4, R.drawable.img4, "강아지", "귀요미" ));
         list.add(4, new YshDTO(5, R.drawable.img5, "고양이", "야옹이"));
+        list.add(5, new YshDTO(6, R.drawable.image2, "고양이", "그림이"));
+        list.add(6, new YshDTO(7, R.drawable.image3, "마멋", "마멀레이드"));
+        list.add(7, new YshDTO(8, R.drawable.image4, "새", "학학"));
+        list.add(7, new YshDTO(9, R.drawable.image5, "강아지", "삽살이"));
+
+        Grid_Adapter adapter = new Grid_Adapter(list, inflater);
+        gridView.setAdapter(adapter);
 
 
-
-        List_Adapter adapter = new List_Adapter(list, inflater);
-        listview.setAdapter(adapter);
-
-
-        /*1. 목록을 가지는 모든 뷰는 Adaper가 필요함.
-            -1-1.한칸마다 보여질 데이터를 묶어놓은 객체 == DTO(ArrayList)
-            -1-2.한칸마다 보여질 데이터를 디자인해놓은 파일 == res\layout\xml
-        * 2. Adapter 생성
-            -2-1. 클래스를 추가한다.
-            -2-2. extend(상속)을 받아서 어댑터가 된다.ㅗ
-        *
-        * 3.ListView<=>Adapter연결
-        */
 
         return v;
     }
+
 
 }

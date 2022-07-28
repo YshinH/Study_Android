@@ -64,7 +64,7 @@ public class List_Adapter extends BaseAdapter {
     // ※ 실제 디자인을 붙이는 처리를 한다 ※ LayoutInflater가 필요함 (어떠한 레이아웃을 찾아서 칸마다 디자인을 붙여줌.)
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        //LayoutInflater <-
+        //LayoutInflater <- 첫 칸을 먼저 제공
         convertView = inflater.inflate(R.layout.item_listview, parent, false );
         ImageView imageView = convertView.findViewById(R.id.img_id);
         imageView.setImageResource(list.get(position).getImg_id());
